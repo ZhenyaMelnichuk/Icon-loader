@@ -9,7 +9,8 @@ export default defineConfig({
     plugins: [vue(), vueDevTools()],
     resolve: {
         alias: {
-            '@': fileURLToPath(new URL('./src', import.meta.url)),
-        },
+            '@': fileURLToPath(new URL('./src', import.meta.url))
+        }
     },
+    base: config.VITE_BASE_URL
 })
