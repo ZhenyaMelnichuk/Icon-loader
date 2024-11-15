@@ -14,6 +14,7 @@ export default ({ mode }) => {
                 '@': fileURLToPath(new URL('./src', import.meta.url))
             }
         },
-        base: env.VITE_BASE_URL || '/'
+        base: env.VITE_BASE_URL || '/',
+        publicPath: env.VITE_BASE_URL || '/'
     })
 }
