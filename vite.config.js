@@ -6,7 +6,7 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 
 // https://vite.dev/config/
 export default ({ mode }) => {
-    const config = loadEnv(mode, process.cwd())
+    const env = loadEnv(mode, process.cwd())
     return defineConfig({
         plugins: [vue(), vueDevTools()],
         resolve: {
@@ -14,6 +14,6 @@ export default ({ mode }) => {
                 '@': fileURLToPath(new URL('./src', import.meta.url))
             }
         },
-        base: config.VITE_BASE_URL || '/'
+        base: env.VITE_BASE_URL || '/'
     })
 }
